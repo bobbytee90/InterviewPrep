@@ -1,4 +1,4 @@
-package Exercise1;
+package GitTest;
 
 public class Main {
     public static void main(String args[]) {
