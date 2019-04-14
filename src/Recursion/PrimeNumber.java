@@ -28,8 +28,13 @@ public class PrimeNumber {
             System.out.println(number + " is divisible by " + count);
             return false;
         } else {
+            // Skip if next counter is even
+            int nextCounter = count + 1;
+            if (nextCounter % 2 == 0) {
+                nextCounter = count + 2;
+            }
             // Check with the next divisor
-            return checkIfPrime(number, count + 1);
+            return checkIfPrime(number, nextCounter);
         }
     }
 
@@ -43,6 +48,7 @@ public class PrimeNumber {
         System.out.println("Is 2 prime? " + checkIfPrime(2));
         System.out.println("Is 3 prime? " + checkIfPrime(3));
         System.out.println("Is 4 prime? " + checkIfPrime(4));
+        System.out.println("Is 7 prime? " + checkIfPrime(7));
     }
 
 }
