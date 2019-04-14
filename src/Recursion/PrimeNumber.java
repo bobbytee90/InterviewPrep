@@ -6,6 +6,14 @@ public class PrimeNumber {
 
     // A number is prime only if it is not divisible by 1 and itself.
     public static boolean checkIfPrime(int number) {
+        // Negative numbers are not prime
+        if (number < 0) {
+            return false;
+        }
+        // 1,2,3 are prime
+        else if (number <= 3) {
+            return true;
+        }
         // Check for prime skipping 1, starting with 2.
         return checkIfPrime(number, 2);
     }
@@ -30,6 +38,11 @@ public class PrimeNumber {
         System.out.println("Is 33 prime? " + checkIfPrime(33));
         System.out.println("Is 23434 prime? " + checkIfPrime(23434));
         System.out.println("Is 17 prime? " + checkIfPrime(17));
+        System.out.println("Is 0 prime? " + checkIfPrime(0));
+        System.out.println("Is 1 prime? " + checkIfPrime(1));
+        System.out.println("Is 2 prime? " + checkIfPrime(2));
+        System.out.println("Is 3 prime? " + checkIfPrime(3));
+        System.out.println("Is 4 prime? " + checkIfPrime(4));
     }
 
 }
