@@ -6,18 +6,21 @@ public class PrimeNumber {
 
     // A number is prime only if it is not divisible by 1 and itself.
     public static boolean checkIfPrime(int number) {
-        // Check for prime starting with 2
+        // Check for prime skipping 1, starting with 2.
         return checkIfPrime(number, 2);
     }
 
     private static boolean checkIfPrime(int number, int count) {
+        // Return true if not divisible any other other number but itself.
         if (count == number) {
             return true;
         }
+        // Divisible by another number
         if (number % count == 0) {
             System.out.println(number + " is divisible by " + count);
             return false;
         } else {
+            // Check with the next divisor
             return checkIfPrime(number, count + 1);
         }
     }
